@@ -176,7 +176,33 @@ I386_SRCS = [
 	"//sys/src/9/386/vgavesa.c",
 ]
 
-AMD64SRCS = AMD64_SRCS + CORE_SRCS + I386_SRCS + IP_SRCS + PORT_SRCS
+#Let's give this ath thing a shot
+ATH_SRCS = [
+        "//sys/src/9/386/ath/ah_osdep.c",
+        "//sys/src/9/386/ath/if_ath_ahb.c",
+        "//sys/src/9/386/ath/if_ath_alq.c",
+        "//sys/src/9/386/ath/if_ath_beacon.c",
+        "//sys/src/9/386/ath/if_ath_btcoex.c",
+        "//sys/src/9/386/ath/if_ath_btcoex_mci.c",
+        "//sys/src/9/386/ath/if_ath.c",
+        "//sys/src/9/386/ath/if_ath_debug.c",
+        "//sys/src/9/386/ath/if_ath_descdma.c",
+        "//sys/src/9/386/ath/if_ath_ioctl.c",
+        "//sys/src/9/386/ath/if_ath_keycache.c",
+        "//sys/src/9/386/ath/if_ath_led.c",
+        "//sys/src/9/386/ath/if_ath_lna_div.c",
+        "//sys/src/9/386/ath/if_ath_pci.c",
+        "//sys/src/9/386/ath/if_ath_rx.c",
+        "//sys/src/9/386/ath/if_ath_rx_edma.c",
+        "//sys/src/9/386/ath/if_ath_spectral.c",
+        "//sys/src/9/386/ath/if_ath_sysctl.c",
+        "//sys/src/9/386/ath/if_ath_tdma.c",
+        "//sys/src/9/386/ath/if_ath_tx.c",
+        "//sys/src/9/386/ath/if_ath_tx_edma.c",
+        "//sys/src/9/386/ath/if_ath_tx_ht.c",
+]
+
+AMD64SRCS = AMD64_SRCS + CORE_SRCS + I386_SRCS + IP_SRCS + PORT_SRCS + ATH_SRCS
 
 strip(
 	name="boot",
