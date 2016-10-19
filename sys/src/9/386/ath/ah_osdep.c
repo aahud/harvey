@@ -28,11 +28,13 @@
  *
  * $FreeBSD$
  */
-#include "opt_ah.h"
+
+//#include "opt_ah.h"
+#define INET 1          /* The entire contents of opt_inet.h*/
 
 #include <sys/param.h>
-#include <sys/systm.h>
-#include <sys/kernel.h>
+//#include <sys/systm.h>
+//#include <sys/kernel.h>
 #include <sys/module.h>
 #include <sys/sysctl.h>
 #include <sys/bus.h>
@@ -46,8 +48,10 @@
 
 #include <net/ethernet.h>		/* XXX for ether_sprintf */
 
-#include <dev/ath/ath_hal/ah.h>
-#include <dev/ath/ath_hal/ah_debug.h>
+#include "ath_hal/ah.h"
+#include "ath_hal/ah_debug.h"
+
+typedef unsigned long uintfptr_t;
 
 /*
  * WiSoC boards overload the bus tag with information about the

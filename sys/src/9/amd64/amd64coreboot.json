@@ -6,6 +6,7 @@
 		"Include": [
 			"core.json",
 			"../386/386.json",
+			"../386/ath/ath.json",
 			"../ip/ip.json",
 			"../port/port.json"
 		],

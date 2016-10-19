@@ -1,0 +1,7 @@
+{
+        "386": {
+                "SourceFiles": [
+                        "../386/ath/ah_osdep.c"
+                ]
+        }
+}

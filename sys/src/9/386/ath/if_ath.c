@@ -37,8 +37,12 @@ __FBSDID("$FreeBSD$");
  * is greatly appreciated.
  */
 
-#include "opt_inet.h"
-#include "opt_ath.h"
+//#include "opt_inet.h"
+//#include "opt_ath.h"
+#define INET 1          /* The entire contents of opt_inet.h*/
+//#define ATH_TX99_DIAG 1
+//#define ATH_DEBUG 1   /* Two line contents of opt_ath.h*/
+
 /*
  * This is needed for register operations which are performed
  * by the driver - eg, calls to ath_hal_gettsf32().
@@ -46,11 +50,14 @@ __FBSDID("$FreeBSD$");
  * It's also required for any AH_DEBUG checks in here, eg the
  * module dependencies.
  */
-#include "opt_ah.h"
-#include "opt_wlan.h"
+//#include "opt_ah.h" Legacy reference from FreeBSD 7.3
+//#include "opt_wlan.h"
+#define IEEE80211_SUPPORT_SUPERG 1
+#define IEEE80211_SUPPORT_TDMA 1
 
 #include <sys/param.h>
-#include <sys/systm.h>
+#include <sys/types.h>
+//#include <sys/systm.h>
 #include <sys/sysctl.h>
 #include <sys/mbuf.h>
 #include <sys/malloc.h>
@@ -81,7 +88,7 @@ __FBSDID("$FreeBSD$");
 #include <net/ethernet.h>
 #include <net/if_llc.h>
 
-#include <net80211/ieee80211_var.h>
+//#include <net80211/ieee80211_var.h>
 #include <net80211/ieee80211_regdomain.h>
 #ifdef IEEE80211_SUPPORT_SUPERG
 #include <net80211/ieee80211_superg.h>
@@ -127,6 +134,8 @@ __FBSDID("$FreeBSD$");
 #ifdef	ATH_DEBUG_ALQ
 #include <dev/ath/if_ath_alq.h>
 #endif
+
+typedef unsigned long uintfptr_t;
 
 /*
  * Only enable this if you're working on PS-POLL support.

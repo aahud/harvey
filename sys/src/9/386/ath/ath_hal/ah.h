@@ -28,7 +28,7 @@
  * reference as the first parameter.
  */
 
-#include "ah_osdep.h"
+#include "../ah_osdep.h"
 
 /*
  * The maximum number of TX/RX chains supported.
